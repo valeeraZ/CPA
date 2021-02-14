@@ -7,7 +7,7 @@ import sys
 def readGraph():
     """
     read graph from (i) the list of directed hyperlinks and (ii) the name of the pages corresponding to each node ID
-    :return: (list of edges, list of pages)
+    :return: (list of edges, list of pages, dictionary node_id:node_index)
     """
     time_start = time.time()
     print("Reading files...")
@@ -32,7 +32,7 @@ def readGraph():
         edge[1] = node_to_index[edge[1]]
     time_end = time.time()
     print("Charge time:", time_end - time_start, "seconds")
-    return edges, pages
+    return edges, pages, node_to_index
 
 
 def pageRank(edges, pages, alpha):
@@ -66,12 +66,13 @@ def pageRank(edges, pages, alpha):
     k = 0  # iteration times
     print('loop...')
 
-    while var > 0.00000001:
+    while var > 0.000001:
         var = page_rank
         for i in range(e):
             source = edges[i][0]
             dest = edges[i][1]
-            page_rank_temp[dest] += page_rank[source] / degree_out[source]
+            if degree_out[source] > 0:
+                page_rank_temp[dest] += page_rank[source] / degree_out[source]
         # (1 - alpha) * T * P + alpha * l, where l = vector(N, 1/N)
         page_rank_temp = (1 - alpha) * page_rank_temp + alpha / n
         norm = np.linalg.norm(page_rank_temp, 1)  # ||P||_1
@@ -151,7 +152,7 @@ if __name__ == '__main__':
     Alpha = float(sys.argv[1])
 
     # reading graph
-    Edges, Pages = readGraph()
+    Edges, Pages, Node_to_Index = readGraph()
 
     # calculating
     PageRank, DegreeOut, DegreeIn = pageRank(Edges, Pages, Alpha)

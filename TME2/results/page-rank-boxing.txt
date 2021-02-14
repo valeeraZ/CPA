@@ -1,0 +1,20 @@
+Reading files...
+Number of edges: 46092177
+Number of nodes: 2080370
+Charge time: 51.17199921607971 seconds
+Calculating Personalized Page Rank value of categories Boxing with alpha = 0.15
+loop...
+Iteration times: 14
+Calculation time: 680.5408391952515 seconds
+Top 5 highest page rank nodes:
+ID: 4243 Name: Boxing Page Rank value: 0.011791092419571624
+ID: 12206656 Name: Miscellaneous of Boxing Page Rank value: 0.0036626454816693836
+ID: 3434750 Name: United States Page Rank value: 0.003594474380712173
+ID: 4284031 Name: Amateur boxing Page Rank value: 0.003026819456250737
+ID: 12206918 Name: List of Quadruple Champions of Boxing Page Rank value: 0.0028568694159583873
+Top 5 lowest page rank nodes:
+ID: 632 Name: Aberdeen (disambiguation) Page Rank value:  0.0
+ID: 679 Name: Animal (disambiguation) Page Rank value:  0.0
+ID: 951 Name: Antigua and Barbuda Page Rank value:  0.0
+ID: 964 Name: AWK (disambiguation) Page Rank value:  0.0
+ID: 1110 Name: Demographics of American Samoa Page Rank value:  0.0

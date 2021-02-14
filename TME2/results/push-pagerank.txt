@@ -1,0 +1,20 @@
+Reading files...
+Number of edges: 46092177
+Number of nodes: 2080370
+Charge time: 53.9739990234375 seconds
+Calculating Personalized Page Rank value of categories Boxing with alpha = 0.15
+loop...
+Push Operation times: 86727
+Calculation time: 23.561000108718872 seconds
+Top 5 highest page rank nodes:
+ID: 4243 Name: Boxing Page Rank value: 0.015095238494328304
+ID: 12206656 Name: Miscellaneous of Boxing Page Rank value: 0.005675486610384108
+ID: 4284031 Name: Amateur boxing Page Rank value: 0.0047607770156398565
+ID: 12206918 Name: List of Quadruple Champions of Boxing Page Rank value: 0.004478810962328654
+ID: 12205792 Name: List of Triple Champions of Boxing Page Rank value: 0.004457738953942935
+Top 5 lowest page rank nodes:
+ID: 12 Name: Anarchism Page Rank value:  0.0
+ID: 25 Name: Autism Page Rank value:  0.0
+ID: 39 Name: Albedo Page Rank value:  0.0
+ID: 43 Name: Abu Dhabi Page Rank value:  0.0
+ID: 290 Name: A Page Rank value:  0.0

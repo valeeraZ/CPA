@@ -1,0 +1,20 @@
+Reading files...
+Number of edges: 46092177
+Number of nodes: 2080370
+Charge time: 51.3689866065979 seconds
+Calculating Personalized Page Rank value of categories Chess with alpha = 0.15
+loop...
+Iteration times: 19
+Calculation time: 923.1730415821075 seconds
+Top 5 highest page rank nodes:
+ID: 5134 Name: Chess Page Rank value: 0.09969391714555559
+ID: 47653 Name: Game clock Page Rank value: 0.05123532707520636
+ID: 559997 Name: List of chess topics Page Rank value: 0.05026073709130644
+ID: 72171 Name: Time control Page Rank value: 0.003215089599670034
+ID: 2073557 Name: Bobby Fischer Page Rank value: 0.0031825794007963163
+Top 5 lowest page rank nodes:
+ID: 632 Name: Aberdeen (disambiguation) Page Rank value:  0.0
+ID: 679 Name: Animal (disambiguation) Page Rank value:  0.0
+ID: 951 Name: Antigua and Barbuda Page Rank value:  0.0
+ID: 964 Name: AWK (disambiguation) Page Rank value:  0.0
+ID: 1110 Name: Demographics of American Samoa Page Rank value:  0.0
