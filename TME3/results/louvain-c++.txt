@@ -1,0 +1,37 @@
+Begin: Sun Feb 28 22:35:15 2021
+
+Computation of communities with the Newman-Girvan Modularity quality function
+
+level 0:
+  start computation: Sun Feb 28 22:35:15 2021
+  network size: 334863 nodes, 1851744 links, 1.85174e+06 weight
+  quality increased from -6.22817e-06 to 0.674658
+  end computation: Sun Feb 28 22:35:19 2021
+level 1:
+  start computation: Sun Feb 28 22:35:19 2021
+  network size: 53099 nodes, 397655 links, 1.85174e+06 weight
+  quality increased from 0.674658 to 0.853929
+  end computation: Sun Feb 28 22:35:20 2021
+level 2:
+  start computation: Sun Feb 28 22:35:20 2021
+  network size: 10214 nodes, 144522 links, 1.85174e+06 weight
+  quality increased from 0.853929 to 0.91639
+  end computation: Sun Feb 28 22:35:20 2021
+level 3:
+  start computation: Sun Feb 28 22:35:20 2021
+  network size: 1237 nodes, 33345 links, 1.85174e+06 weight
+  quality increased from 0.91639 to 0.926027
+  end computation: Sun Feb 28 22:35:20 2021
+level 4:
+  start computation: Sun Feb 28 22:35:20 2021
+  network size: 279 nodes, 9681 links, 1.85174e+06 weight
+  quality increased from 0.926027 to 0.926228
+  end computation: Sun Feb 28 22:35:20 2021
+level 5:
+  start computation: Sun Feb 28 22:35:20 2021
+  network size: 235 nodes, 8235 links, 1.85174e+06 weight
+  quality increased from 0.926228 to 0.926303
+  end computation: Sun Feb 28 22:35:20 2021
+End: Sun Feb 28 22:35:20 2021
+Total duration: 5 sec
+0.926303

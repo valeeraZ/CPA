@@ -1,0 +1,11 @@
+Label Propagation Algorithm of Scikit NetWork
+Graph 1:
+Number of nodes:  400
+Number of edges:  23754
+Number of clusters/labels: 4
+Partition of nodes in different clusters/labels: [198 100 101   1]
+---
+Graph 2:
+Number of edges: 925871
+Number of nodes: 334863
+Number of clusters: 68936

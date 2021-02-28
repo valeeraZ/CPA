@@ -1,0 +1,15 @@
+Label Propagation Algorithm
+Graph 1
+Number of nodes:  400
+Number of edges:  23749
+Calculating communities with LPA...
+Calculation time: 0.03627419471740723 seconds
+Number of clusters/labels: 4
+Partition of nodes in different clusters/labels: [ 98   2 196 104]
+---
+Graph 2
+Number of edges: 925871
+Number of nodes: 334863
+Calculating communities with LPA...
+Calculation time: 14.316725015640259 seconds
+Number of clusters/labels: 68930

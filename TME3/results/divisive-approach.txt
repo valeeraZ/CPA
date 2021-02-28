@@ -1,0 +1,7 @@
+Divisive Approach Algorithm
+Number of nodes: 34
+Number of edges: 78
+Calculating communities with DA...
+Calculation time: 0.13614416122436523 seconds
+Number of clusters/labels: 5
+Partition of nodes in different clusters/labels: [10  6  5 12  1]
