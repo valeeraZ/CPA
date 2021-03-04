@@ -1,0 +1,99 @@
+/usr/bin/python3 /Users/sylvain/Work/M1/CPA/Sorbonne_CPA_Graph/TME3/measure.py
+---
+Measure for graph n400_p0.3_q0.3.txt
+Number of edges: 23975
+Number of nodes: 400
+LPA Modularity: -1.2947097961104975e-05
+Louvain Modularity: -0.003164769523345599
+
+LPA AMI: 3.535716248126586e-15
+Louvain AMI: -0.0026247853845822538
+
+LPA RI: 0.0
+Louvain RI: -0.0015152574699026026
+
+LPA NMI: 0.0049511678292944875
+Louvain NMI: 0.023111639588687376
+---
+Measure for graph n400_p0.6_q0.3.txt
+Number of edges: 29919
+Number of nodes: 400
+LPA Modularity: 6.413530755889881e-05
+Louvain Modularity: 0.1475605183048902
+
+LPA AMI: 0.005925440140615829
+Louvain AMI: 1.0
+
+LPA RI: 6.11153396050287e-05
+Louvain RI: 1.0
+
+LPA NMI: 0.0169215106693217
+Louvain NMI: 1.0
+---
+Measure for graph n400_p0.8_q0.1.txt
+Number of edges: 21798
+Number of nodes: 400
+LPA Modularity: 0.47147806897925826
+Louvain Modularity: 0.47744240608543265
+
+LPA AMI: 0.979625403141636
+Louvain AMI: 1.0
+
+LPA RI: 0.9866666397310955
+Louvain RI: 1.0
+
+LPA NMI: 0.9797925168209694
+Louvain NMI: 1.0
+---
+Measure for graph n400_p0.8_q0.2.txt
+Number of edges: 27862
+Number of nodes: 400
+LPA Modularity: -6.423492887804443e-06
+Louvain Modularity: 0.31743788158401065
+
+LPA AMI: 0.0072975287149962455
+Louvain AMI: 1.0
+
+LPA RI: 6.807555980717344e-05
+Louvain RI: 1.0
+
+LPA NMI: 0.019201196216286867
+Louvain NMI: 1.0
+---
+Measure for graph benchmark_n128_e1024.txt
+Number of edges: 1024
+Number of nodes: 128
+LPA Modularity: 0.462646484375
+Louvain Modularity: 0.6474609375
+
+LPA AMI: 0.737737439924118
+Louvain AMI: 1.0
+
+LPA RI: 0.6523205048773107
+Louvain RI: 1.0
+
+LPA NMI: 0.7583588079622381
+Louvain NMI: 1.0
+---
+Measure for graph benchmark_n1000_e8000.txt
+Number of edges: 8000
+Number of nodes: 1000
+LPA Modularity: 0.7422699999999998
+Louvain Modularity: 0.86793
+
+LPA AMI: 0.9097944664743935
+Louvain AMI: 1.0
+
+LPA RI: 0.7952786791472185
+Louvain RI: 1.0
+
+LPA NMI: 0.9253864956345751
+Louvain NMI: 1.0
+---
+Measure for graph benchmark_n128_e1024.txt
+Number of edges: 1024
+Number of nodes: 128
+Divisive Algorithm Modularity: 0.6474609375
+Divisive Algorithm AMI: 1.0
+Divisive Algorithm RI: 1.0
+Divisive Algorithm NMI: 1.0

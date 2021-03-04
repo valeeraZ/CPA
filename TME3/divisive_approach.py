@@ -91,26 +91,23 @@ if __name__ == '__main__':
 
     graph_filename = sys.argv[1]
     print("Divisive Approach Algorithm")
-    G,_,_ = load_graph(graph_filename)
+    G, _ ,_ = load_graph(graph_filename)
     New_Labels = divisive_approach(G)
-    labels_unique, count = np.unique(New_Labels, return_counts=True)
+    labels_unique, partition = np.unique(New_Labels, return_counts=True)
     number_communities = len(labels_unique)
 
     # save results
     filename = os.path.split(graph_filename)[1]
     graph_name = os.path.splitext(filename)[0]
 
-    community_filename = "div_c" + str(number_communities) + "_" + graph_name
+    community_filename = "div_" + graph_name
     f = open("results/" + community_filename + ".txt", "w")
     for i in range(len(New_Labels)):
         label = New_Labels[i]
         f.write(str(i) + "\t" + str(label) + "\n")
     # draw the community result
-    draw_graph(G, New_Labels, "Number of communities: " + str(number_communities), community_filename + ".png")
+    draw_graph(G, New_Labels, community_filename + ".png")
 
     print("Results of community exported to results/" + community_filename + ".txt")
     print("Number of clusters/labels:", number_communities)
-
-    """
-    print("Partition of nodes in different clusters/labels:", partition)
-    """
+    print("Partition of nodes in different clusters/labels:", [item for item in partition])

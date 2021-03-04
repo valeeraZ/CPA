@@ -52,10 +52,9 @@ def write2file(G, file_name):
     f.writelines([str(i) + "\t" + str(j) + "\n" for (i,j) in G.edges()])
 
 
-def draw_graph(graph, clusters, title="", filename=""):
+def draw_graph(graph, clusters, filename=""):
     pos = nx.nx_agraph.graphviz_layout(graph)
     nx.draw(graph, pos=pos, node_color=clusters, node_size=120)
-    plt.title(title)
     if filename != "":
         plt.savefig("graph/" + filename)
     plt.show()
@@ -87,9 +86,10 @@ def load_graph(filename):
         edge[0] = node_to_index[edge[0]]
         edge[1] = node_to_index[edge[1]]
     nodes = list(node_to_index.values())
+    nodes.sort()
     G = nx.Graph()
-    G.add_edges_from(edges)
     G.add_nodes_from(nodes)
+    G.add_edges_from(edges)
     return G, edges, nodes
 
 

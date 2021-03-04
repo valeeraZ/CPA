@@ -42,6 +42,10 @@ def label_propagation(adj_list, nodes, labels):
         counter = 0
         for u in nodes:
             degree = len(adj_list.get(u, []))
+            """
+            neighbour = list(graph.neighbors(u))
+            degree = len(neighbour)
+            """
             # no neighbour
             if degree == 0:
                 counter += 1
@@ -49,6 +53,7 @@ def label_propagation(adj_list, nodes, labels):
                 # 1 neighbour
                 if degree == 1:
                     v = adj_list.get(u)[0]
+                    "v = neighbour[0]"
                     if labels[u] == labels[v]:
                         counter += 1
                     else:
@@ -56,9 +61,16 @@ def label_propagation(adj_list, nodes, labels):
                 # 1 more neighbours
                 else:
                     neighbour_labels = []
+                    """
+                    for v in neighbour:
+                        neighbour_labels.append(labels[v])
+                    """
                     for v in adj_list.get(u):
                         neighbour_labels.append(labels[v])
                     new_label = most_frequent(neighbour_labels, labels[u])
+                    """
+                    new_label = max(neighbour_labels, key=neighbour_labels.count)
+                    """
                     if new_label == labels[u]:
                         counter += 1
                     else:
@@ -88,17 +100,14 @@ if __name__ == '__main__':
     filename = os.path.split(graph_filename)[1]
     graph_name = os.path.splitext(filename)[0]
 
-    community_filename = "lpa_c" + str(number_communities) + "_" + graph_name
+    community_filename = "lpa_" + graph_name
     f = open("results/" + community_filename+".txt" , "w")
     for i in range(len(New_Labels)):
         label = New_Labels[i]
         f.write(str(i) + "\t" + str(label) + "\n")
     # draw the community result
-    draw_graph(G, New_Labels, "Number of communities: " + str(number_communities), community_filename+".png")
+    draw_graph(G, New_Labels, community_filename+".png")
 
     print("Results of community exported to results/" + community_filename + ".txt")
     print("Number of clusters/labels:", number_communities)
-
-    """
-    print("Partition of nodes in different clusters/labels:", partition)
-    """
+    print("Partition of nodes in different clusters/labels:", [item for item in partition])

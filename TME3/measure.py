@@ -13,9 +13,9 @@ clusters = ["cluster_c4_n400_p0.3_q0.3.txt", "cluster_c4_n400_p0.6_q0.3.txt",
             "cluster_c4_n400_p0.8_q0.1.txt", "cluster_c4_n400_p0.8_q0.2.txt",
             "cluster_c4_benchmark_n128_e1024.txt", "cluster_c31_benchmark_n1000_e8000.txt"]
 
-lpa_res = ["lpa_c4_n400_p0.3_q0.3.txt", "lpa_c3_n400_p0.6_q0.3.txt",
-           "lpa_c6_n400_p0.8_q0.1.txt", "lpa_c2_n400_p0.8_q0.2.txt",
-           "lpa_c10_benchmark_n128_e1024.txt", "lpa_c47_benchmark_n1000_e8000.txt"]
+lpa_res = ["lpa_n400_p0.3_q0.3.txt", "lpa_n400_p0.6_q0.3.txt",
+           "lpa_n400_p0.8_q0.1.txt", "lpa_n400_p0.8_q0.2.txt",
+           "lpa_benchmark_n128_e1024.txt", "lpa_benchmark_n1000_e8000.txt"]
 
 louvain_res = ["louvain_n400_p0.3_q0.3.txt", "louvain_n400_p0.6_q0.3.txt",
                "louvain_n400_p0.8_q0.1.txt", "louvain_n400_p0.8_q0.2.txt",
@@ -27,7 +27,7 @@ graphs_div = ["benchmark_n128_e1024.txt"]
 
 clusters_div = ["cluster_c4_benchmark_n128_e1024.txt"]
 
-da_res = ["div_c4_benchmark_n128_e1024.txt"]
+da_res = ["div_benchmark_n128_e1024.txt"]
 
 if __name__ == '__main__':
     for i in range(len(graphs)):
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         louvain_file = louvain_res[i]
 
         print("---")
-        print("Metrics for graph " + graph_file)
+        print("Measure for graph " + graph_file)
 
         graph, edges, nodes = load_graph("data/" + graph_file)
         cluster = load_community("data/" + cluster_file)
@@ -55,17 +55,23 @@ if __name__ == '__main__':
             communities.append(set([i for (i, j) in enumerate(louvain) if j == l]))
         print("Louvain Modularity:", nx.algorithms.community.modularity(graph, communities))
 
+        print()
+
         # AMI
         LPA_AMI = sk.adjusted_mutual_info_score(cluster, lpa)
         Louvain_AMI = sk.adjusted_mutual_info_score(cluster, louvain)
         print("LPA AMI:", LPA_AMI)
         print("Louvain AMI:", Louvain_AMI)
 
+        print()
+
         # RI
         LPA_RI = sk.adjusted_rand_score(cluster, lpa)
         Louvain_RI = sk.adjusted_rand_score(cluster, louvain)
         print("LPA RI:", LPA_RI)
         print("Louvain RI:", Louvain_RI)
+
+        print()
 
         # NMI
         LPA_NMI = sk.normalized_mutual_info_score(cluster, lpa)
@@ -80,7 +86,7 @@ if __name__ == '__main__':
         da_file = da_res[i]
 
         print("---")
-        print("Metrics for graph " + graph_file)
+        print("Measure for graph " + graph_file)
 
         graph, edges, nodes = load_graph("data/" + graph_file)
         cluster = load_community("data/" + cluster_file)
