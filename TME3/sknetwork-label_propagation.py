@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     # use a simple graph with 400 nodes and about 20,000 edges
     print("Graph 1:")
-    G, Edges, Nodes = load_graph('data/question1.txt')
+    G, Edges, Nodes = load_graph('data/n400_p0.8_q0.1.txt')
     Labels = Nodes.copy()
     adjacency = edgelist2adjacency(Edges)
     New_Labels = propagation.fit_transform(adjacency)

@@ -1,3 +1,5 @@
+import os
+import sys
 from random import choice, shuffle
 from TME3.graph import makeAdjArray, load_graph, generate_graph, draw_graph
 import numpy as np
@@ -67,25 +69,36 @@ def label_propagation(adj_list, nodes, labels):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("usage: <input-graph-filename.txt>")
+        sys.exit()
+
+    graph_filename = sys.argv[1]
+
     print("Label Propagation Algorithm")
     # use a simple graph with 400 nodes and about 20,000 edges
-    print("Graph 1")
-    G, Edges, Nodes = load_graph('data/question1.txt')
+    G, Edges, Nodes = load_graph(graph_filename)
     Labels = Nodes.copy()
     AdjList = makeAdjArray(Edges)
     New_Labels = label_propagation(AdjList, Nodes, Labels)
-    labels_unique, count = np.unique(New_Labels, return_counts=True)
-    print("Number of clusters/labels:", len(labels_unique))
-    print("Partition of nodes in different clusters/labels:", count)
+    labels_unique, partition = np.unique(New_Labels, return_counts=True)
+    number_communities = len(labels_unique)
 
-    print("---")
+    # save results
+    filename = os.path.split(graph_filename)[1]
+    graph_name = os.path.splitext(filename)[0]
 
-    # use a graph with about 900,000 edges
-    print("Graph 2")
-    G, Edges, Nodes = load_graph('data/amazon.txt')
-    AdjList = makeAdjArray(Edges)
-    Labels = Nodes.copy()
-    Labels = label_propagation(AdjList, Nodes, Labels)
-    labels_unique = np.unique(Labels)
-    print("Number of clusters/labels:", len(labels_unique))
-    # the graph is too immense and meaningless to draw a figure
+    community_filename = "lpa_c" + str(number_communities) + "_" + graph_name
+    f = open("results/" + community_filename+".txt" , "w")
+    for i in range(len(New_Labels)):
+        label = New_Labels[i]
+        f.write(str(i) + "\t" + str(label) + "\n")
+    # draw the community result
+    draw_graph(G, New_Labels, "Number of communities: " + str(number_communities), community_filename+".png")
+
+    print("Results of community exported to results/" + community_filename + ".txt")
+    print("Number of clusters/labels:", number_communities)
+
+    """
+    print("Partition of nodes in different clusters/labels:", partition)
+    """

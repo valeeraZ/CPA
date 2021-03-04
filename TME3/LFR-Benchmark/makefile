@@ -4,7 +4,7 @@ LOPT=-O3
 #-funroll-loops
 
 MAIN=./Sources/benchm
-TAG=lfrbench_udwov  # LFR Benchmark for undirected weighted links with overlaps
+TAG=benchmark  # LFR Benchmark for undirected weighted links with overlaps
 
 
 $(MAIN).o :

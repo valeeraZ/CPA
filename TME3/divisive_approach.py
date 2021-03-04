@@ -1,7 +1,10 @@
+import os
+import sys
 import time
 
 import networkx as nx
 import numpy as np
+from graph import load_graph, draw_graph
 
 
 # deep copy a graph
@@ -82,11 +85,32 @@ def divisive_approach(graph):
 
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("usage: <input-graph-filename.txt>")
+        sys.exit()
+
+    graph_filename = sys.argv[1]
     print("Divisive Approach Algorithm")
-    G = nx.karate_club_graph()
-    print("Number of edges:", len(G.edges))
-    print("Number of nodes:", len(G.nodes))
+    G,_,_ = load_graph(graph_filename)
     New_Labels = divisive_approach(G)
     labels_unique, count = np.unique(New_Labels, return_counts=True)
-    print("Number of clusters/labels:", len(labels_unique))
-    print("Partition of nodes in different clusters/labels:", count)
+    number_communities = len(labels_unique)
+
+    # save results
+    filename = os.path.split(graph_filename)[1]
+    graph_name = os.path.splitext(filename)[0]
+
+    community_filename = "div_c" + str(number_communities) + "_" + graph_name
+    f = open("results/" + community_filename + ".txt", "w")
+    for i in range(len(New_Labels)):
+        label = New_Labels[i]
+        f.write(str(i) + "\t" + str(label) + "\n")
+    # draw the community result
+    draw_graph(G, New_Labels, "Number of communities: " + str(number_communities), community_filename + ".png")
+
+    print("Results of community exported to results/" + community_filename + ".txt")
+    print("Number of clusters/labels:", number_communities)
+
+    """
+    print("Partition of nodes in different clusters/labels:", partition)
+    """

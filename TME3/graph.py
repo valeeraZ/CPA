@@ -52,9 +52,12 @@ def write2file(G, file_name):
     f.writelines([str(i) + "\t" + str(j) + "\n" for (i,j) in G.edges()])
 
 
-def draw_graph(graph, clusters):
+def draw_graph(graph, clusters, title="", filename=""):
     pos = nx.nx_agraph.graphviz_layout(graph)
     nx.draw(graph, pos=pos, node_color=clusters, node_size=120)
+    plt.title(title)
+    if filename != "":
+        plt.savefig("graph/" + filename)
     plt.show()
 
 
@@ -103,3 +106,19 @@ def makeAdjArray(edges):
         else:
             adj_array[edge[0]].append(edge[1])
     return adj_array
+
+
+def load_community(filename, delimiter="\t"):
+    """
+    load community from file
+    format: id-node id-community
+    :param delimiter: delimiter by default is tab
+    :param filename: file
+    :return: [cluster of node-1, cluster of node-2, ...]
+    """
+    data_cluster = pd.read_table(filename, dtype=int, header=None, delimiter=delimiter)
+    node_clusters = data_cluster.values.tolist()
+    clusters = []
+    for elem in node_clusters:
+        clusters.append(elem[1])
+    return clusters
