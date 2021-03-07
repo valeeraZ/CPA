@@ -60,14 +60,14 @@ def draw_graph(graph, clusters, filename=""):
     plt.show()
 
 
-def load_graph(filename):
+def load_graph(filename, skiprow=0):
     """
     load a graph from file of format:
     src dest
     :param filename:
     :return: G: nx.graph, list of edges, list of nodes
     """
-    data_edge = pd.read_table(filename, dtype=int, header=None)
+    data_edge = pd.read_table(filename, dtype=int, skiprows=skiprow, header=None)
     edges = data_edge.values.tolist()
     print("Number of edges:", len(edges))
     nodes = set()

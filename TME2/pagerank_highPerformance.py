@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import time
 import sys
+import networkx as nx
 
 
 def readGraph():
@@ -13,10 +14,10 @@ def readGraph():
     print("Reading files...")
 
     # Reading
-    data_edge = pd.read_table('alr21--dirLinks--enwiki-20071018.txt', skiprows=5, dtype=int, header=None)
-    data_page = pd.read_table('alr21--pageNum2Name--enwiki-20071018.txt', skiprows=5, encoding='utf-8', header=None)
-    edges = data_edge.values.tolist()
-    pages = data_page.values.tolist()
+    edges = pd.read_table('data/alr21--dirLinks--enwiki-20071018.txt', skiprows=5, dtype=int, header=None).to_numpy(dtype=int)
+    pages = pd.read_table('data/alr21--pageNum2Name--enwiki-20071018.txt', skiprows=5, encoding='utf-8', header=None).to_numpy()
+    # edges = data_edge.values.tolist()
+    # pages = data_page.values.tolist()
     print("Number of edges:", len(edges))
     print("Number of nodes:", len(pages))
 
