@@ -1,0 +1,11 @@
+Start loading graph
+Number of edges: 117185083
+Number of nodes: 3072441
+Loading time: 1461.952261209488 seconds
+Calculating core decomposition...
+Calculation time: 11351.06044793129 seconds
+Core value: 253
+average degree density : 38.140710594605395
+the edge density : 2.4827635751783857e-05
+maximum value of densest prefix: 227.87243515292295
+the size of a densest core ordering prefix: 25830
