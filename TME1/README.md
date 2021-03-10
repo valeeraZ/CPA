@@ -28,7 +28,8 @@ This program will print the Adjacency list of graph. With `list` in C++, the nei
 
 This program will calculate the lower and upper bound of diameter of graph with the algorithm BFS.
 
-# ex4_triangles: calculate the triangles of graph
-This program will calculate the triangles of graph and give the number of triangles.
+# triangles.ipynb: calculate the triangles of graph
+Run the file `triangle.ipynb`, in the last cell modify the parameter of function `tme1_triangle` with the filename of graph.  
+This program will list the triangles of graph into memory and give the number of triangles.
 
 
