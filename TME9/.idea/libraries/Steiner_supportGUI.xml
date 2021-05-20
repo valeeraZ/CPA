@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Steiner_supportGUI">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jars/Steiner_supportGUI.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

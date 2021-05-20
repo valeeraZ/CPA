@@ -4,3 +4,14 @@
 /.idea
 *.exe
 /*/.vscode
+*.class
+data/com-amazon.ungraph.txt.gz
+data/com-lj.ungraph.txt
+data/com-lj.ungraph.txt.gz
+data/com-orkut.ungraph.txt.gz
+TME2/__pycache__/pagerank_highPerformance.cpython-37.pyc
+TME4/data/com-amazon.ungraph.txt
+TME2/data/alr21--categNum2Name--enwiki-20071018.txt
+TME2/data/alr21--dirLinks--enwiki-20071018.txt
+TME2/data/alr21--pageCategList--enwiki--20071018.txt
+TME2/data/alr21--pageNum2Name--enwiki-20071018.txt
